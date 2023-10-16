@@ -15,7 +15,7 @@ int main(void)
 	/* your code goes there */
 
 	o = n % 10;
-	printf("The last digit of %d is %d", n, o);
+	printf("Last digit of %d is %d", n, o);
 	if (o == 0)
 	{
 		printf(" and is 0\n");
