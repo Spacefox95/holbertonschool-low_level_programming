@@ -1,0 +1,1 @@
+int -putchar(char c);
