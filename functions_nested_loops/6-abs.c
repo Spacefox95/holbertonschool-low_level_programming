@@ -4,16 +4,18 @@
 
 /**
  * _abs - computes the absolute value of integer
- * @int r: character to check
+ * @r: character to check
  * Return: 0 (Success)
  *
  */
 
-int _abs(int)
-{
-	int r;
+int _abs(int r)
 
-	abs(r);
+{
+	if (r > 0)
+		return (r);
+	else if (r < 0)
+		return (-r);
 
 	return (0);
 }
