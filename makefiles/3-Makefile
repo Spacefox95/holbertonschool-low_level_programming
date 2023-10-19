@@ -3,21 +3,16 @@ SRC = main.c school.c
 OBJ = $(SRC:.c=.o)
 NAME = school
 RM = rm -f
+all: $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
 
-
-all : m.h $(OBJ)
-	$(CC) $(SRC) -o $(NAME)
-
-/** deletes emacs and vim temporary files with executable */
-clean :
+clean:
 	$(RM) *~ $(NAME)
 	$(RM) *.swp $(NAME)
 
-/** deletes object files */
-oclean :
+oclean:
 	$(RM) $(OBJ)
 
-/** deletes emacs and vim, exec and object*/
-fclean : clean oclean
+fclean: clean oclean
 
-re : oclean all
+re: oclean all
