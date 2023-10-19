@@ -10,6 +10,7 @@ all : m.h $(OBJ)
 
 clean :
 	$(RM) *~ $(NAME)
+	$(RM) *.swp $(NAME)
 
 oclean :
 	$(RM) $(OBJ)
