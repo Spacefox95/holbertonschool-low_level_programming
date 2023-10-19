@@ -21,24 +21,20 @@ void times_table(void)
 				if (j == 0)
 				{
 					_putchar('0' + k);
-					_putchar(',');
-					_putchar(' ');
-					_putchar(' ');
 				}
-				else if (k < 10)
+				else if (k <= 9)
 				{
-					_putchar('0' + k);
 					_putchar(',');
 					_putchar(' ');
 					_putchar(' ');
+					_putchar('0' + k);
 				}
 				else if (k >= 10)
 				{
-
-					_putchar('0' + (k / 10));
-					_putchar('0' + (k % 10));
 					_putchar(',');
 					_putchar(' ');
+					_putchar('0' + (k / 10));
+					_putchar('0' + (k % 10));
 				}
 		}
 		_putchar('\n');
