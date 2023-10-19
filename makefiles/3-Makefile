@@ -8,13 +8,16 @@ RM = rm -f
 all : m.h $(OBJ)
 	$(CC) $(SRC) -o $(NAME)
 
+/** deletes emacs and vim temporary files with executable */
 clean :
 	$(RM) *~ $(NAME)
 	$(RM) *.swp $(NAME)
 
+/** deletes object files */
 oclean :
 	$(RM) $(OBJ)
 
+/** deletes emacs and vim, exec and object*/
 fclean : clean oclean
 
 re : oclean all
