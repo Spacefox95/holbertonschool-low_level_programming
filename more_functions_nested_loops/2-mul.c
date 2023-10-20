@@ -3,16 +3,13 @@
 
 /**
  * mul - multiplies 2 ints.
- * @c: result of multiplication
+ * @a: first int
+ * @b: second int
  * Return: (c) is the answer
  *
  */
 
 int mul(int a, int b)
 {
-	int c;
-	
-	c = a * b;
-	
-	return (c);
+	return (a * b);
 }
