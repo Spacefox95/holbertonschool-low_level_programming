@@ -21,5 +21,5 @@ int _isupper(int c)
 	{
 		t = 0;
 	}
-	return(t);
+	return (t);
 }
