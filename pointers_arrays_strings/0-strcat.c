@@ -1,8 +1,10 @@
 #include"main.h"
 
 /**
- *
- *
+ * _strcat - add src to dest
+ * @dest: ok
+ * @src: la source
+ * Return: dest
  *
  */
 
@@ -18,7 +20,6 @@ char *_strcat(char *dest, char *src)
 	while (src[len2] != '\0')
 		len2++;
 
-	
 	for (i = 0 ; i < len2 ; i++)
 		dest[i + len1] = src[i];
 	dest = dest + '\0';
