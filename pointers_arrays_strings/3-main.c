@@ -8,7 +8,7 @@
  */
 int main(void)
 {
-    char s1[] = "Hello";
+char s1[] = "Hello";
     char s2[] = "World!";
 
     printf("%d\n", _strcmp(s1, s2));
