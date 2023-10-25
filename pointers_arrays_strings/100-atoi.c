@@ -25,7 +25,6 @@ int _atoi(char *s)
 			res = res * 10;
 			res -= (s[i] - '0');
 		}
-			
 		else if (res != 0)
 			break;
 		i++;
