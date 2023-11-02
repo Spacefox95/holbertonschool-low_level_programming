@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /**
- * main - Destination
+ * main - Test
  * Return: Always 0 (Success)
  */
 
