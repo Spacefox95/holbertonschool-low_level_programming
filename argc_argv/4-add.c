@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include"main.h"
 #include<stdlib.h>
+#include<ctype.h>
 
 /**
  * main - calculate two arguments numbers
@@ -20,23 +21,23 @@ int main(int argc, char *argv[])
 		printf("0\n");
 		return (0);
 	}
-	else
+	else if (argc > 1)
 	{
 		for (i = 1 ; i < argc ; i++)
 		{
-			int num = atoi(argv[i]);
+			char *arg = argv[i];
+			int j = 0;
 
-			if (num == 0 && argv[i][0] != '0')
+			while (arg[j] != '\0')
 			{
-				printf("Error\n");
-				return (1);
+				if (arg[j] < '0' || arg[j] > '9')
+				{
+					printf("Error\n");
+					return (1);
+				}
+				j++;
 			}
-			if (num < 0)
-			{
-				printf("Error\n");
-				return (1);
-			}
-			sum += num;
+			sum += atoi(arg);
 		}
 		printf("%d\n", sum);
 	}
