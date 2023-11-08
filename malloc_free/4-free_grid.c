@@ -3,9 +3,9 @@
 #include<stdlib.h>
 
 /**
- *
- *
- *
+ * free_grid - function to free a 2 dimensional grid
+ * @grid: pointer to the grid
+ * @height: the eight of the grid
  */
 
 void free_grid(int **grid, int height)
@@ -13,7 +13,6 @@ void free_grid(int **grid, int height)
 	int i;
 
 	if (grid == NULL)
-		return;
 
 	for (i = 0 ; i < height ; i++)
 	{
@@ -21,5 +20,4 @@ void free_grid(int **grid, int height)
 			free(grid[i]);
 	}
 	free(grid);
-	return;
 }
