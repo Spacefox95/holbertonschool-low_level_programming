@@ -12,6 +12,9 @@ void *malloc_checked(unsigned int b)
 {
 	unsigned int *a;
 
+	if (b <= 0)
+		return (NULL);
+
 	a = malloc(sizeof(*a) * b);
 
 	if (a == NULL)
