@@ -6,11 +6,14 @@
 #include <string.h>
 
 /**
- *
- *
+ * struct lists - structure for a linked list
+ * @str: string data in the node
+ * @len: lengh of the string
+ * @next: pointer to the next node in the struct
  */
 
-typedef struct lists {
+typedef struct lists
+{
 	char *str;
 	unsigned int len;
 	struct lists *next;
