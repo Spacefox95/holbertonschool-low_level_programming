@@ -2,7 +2,7 @@
 
 /**
  * print_dlistint - function that print a double linked list
- * @h - elements of the list
+ * @h: elements of the list
  * Return: number of nodes of the list
  */
 
