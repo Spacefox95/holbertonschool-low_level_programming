@@ -39,7 +39,7 @@ int init_exit(int number, char *arg, int fd)
  */
 int main(int argc, char *argv[])
 {
-	char buffer[1024];
+	char *buffer[1024];
 	int file_from, file_to;
 	ssize_t bytesRead, bytesWritten;
 
@@ -55,7 +55,7 @@ int main(int argc, char *argv[])
 	file_to = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
 	if (file_to == -1)
 	{
-		init_exit(98, argv[2], 0);
+		init_exit(99, argv[2], 0);
 	}
 	while ((bytesRead = read(file_from, buffer, 1024)) > 0)
 	{
