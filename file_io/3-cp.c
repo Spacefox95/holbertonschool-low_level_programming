@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include "main.h"
 
-#define BUFFER_SIZE 1024
-
 /**
  * main - function to copy the content of a file to another file
  * @argc: argument coutner
@@ -12,7 +10,7 @@
  */
 int main(int argc, char *argv[])
 {
-	char buffer[BUFFER_SIZE];
+	char buffer[1024];
 	int file_from, file_to;
 	ssize_t bytesRead, bytesWritten;
 
@@ -27,23 +25,20 @@ int main(int argc, char *argv[])
 		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	file_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH);
+	file_to = open(argv[2], O_CREAT | O_TRUNC | O_WRONLY, 0664);
 	if (file_to == -1)
 	{
-		close(file_from);
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		exit(99);
 	}
-	while ((bytesRead = read(file_from, buffer, BUFFER_SIZE)) > 0)
+	while ((bytesRead = read(file_from, buffer, 1024)) > 0)
 	{
 		bytesWritten = write(file_to, buffer, bytesRead);
 		if (bytesRead != bytesWritten)
-		{
-			close(file_from);
-			close(file_to);
 			return (0);
-		}
 	}
+	close(file_from);
+	close(file_to);
 	if (close(file_from) == -1)
 	{
 		dprintf(STDERR_FILENO, "Can't close fd %d\n", file_from);
