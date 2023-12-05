@@ -66,12 +66,12 @@ int main(int argc, char *argv[])
 			init_exit(99, argv[2], 0);
 	}
 	if (close(file_from) == -1)
-	{
 		init_exit(100, NULL, file_from);
-	}
+	else
+		close(file_from);
 	if (close(file_to) == -1)
-	{
 		init_exit(100, NULL, file_to);
-	}
+	else
+		close(file_to);
 	return (0);
 }
